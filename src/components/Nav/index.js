@@ -6,12 +6,12 @@ function Nav(props) {
     const {
         categories = [],
         setCurrentCategory,
-        currencyCategory,
+        currentCategory,
     } = props;
 
     useEffect(() => {
-        document.title = capitalizeFirstLetter(currencyCategory.name);
-    }, [currencyCategory]);
+        document.title = capitalizeFirstLetter(currentCategory.name);
+    }, [currentCategory]);
     
     // function categorySelected(name) {
     //     console.log(`${name} clicked`)
@@ -35,7 +35,7 @@ function Nav(props) {
                         <span>Contact</span>
                     </li>
                     {categories.map((category) => (
-                        <li className={`mx-1" ${currencyCategory.name === category.name && 'navActive'}`} key={category.name}>
+                        <li className={`mx-1" ${currentCategory.name === category.name && 'navActive'}`} key={category.name}>
                             <span onClick={() => {setCurrentCategory(category)}}>
                                 {capitalizeFirstLetter(category.name)}
                             </span>
